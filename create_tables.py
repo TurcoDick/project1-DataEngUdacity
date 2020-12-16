@@ -72,6 +72,7 @@ def main():
     
     - Finally, closes the connection. 
     """
+        
     cur, conn = create_database()
     
     drop_tables(cur, conn)
