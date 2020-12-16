@@ -32,3 +32,18 @@ Open the terminal and execute the commands:
 2. python3 etl.py
 
 
+### Table architecture
+
+#### The dimension tables are as follows:
+* **users** </br>
+* **songs** </br>
+* **artists** </br>
+* **time** </br>
+* **Log** </br>
+
+#### The actual table is:
+* **songplays**
+
+![](./table%20architecture.png)
+
+
