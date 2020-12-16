@@ -1,4 +1,5 @@
-### Introduction.
+# Project - Organizing data in Sparkify
+## Introduction.
 The objective of the project is to develop a data architecture that organizes and simplifies the consultations for the songs heard.
 
 This project is for a fictional company called Sparkify, it provides its customers with the convenience of listening to their music through the app on their smartphone.
@@ -9,16 +10,25 @@ The goal is to organize Sparkify data in a way that makes it easy for analysts t
 With the new architecture, everything is easier, because the data is clearly separated in the dimension tables, and depending on the query he wants he can use a simple query in the fact table.
 
 
-### Purpose of this database.
+### Learning.
+Now the role of the data engineer has become very clear, they must prepare the data so that whoever uses it will focus on their goals.
 
-This database has the purpose of organizing the data in a single database, making the data more accessible and easy to manage.
+### The project consists of the following files:
+**create_tables.py**  = responsible for deleting, creating and recreating the database and tables.
 
+**etl.py** = responsible for the etl process in the data files, it is in this file that the following processes take place:
+Obtaining the data;
+Data cleaning;
+Transformation of data required for a column in the new table;
+Call the dependencies to make the CRUD in the database;
 
-In the case of the Sparkify application, the relational database was used in a hybrid way, with standardized tables that dimension tables that generate a facts table.
+**sql_queries.py** = responsible for saving CRUD queries to the PostgreSQL database;
 
-                                                                                                                                                                 
-### Design justification.
+**test.ipynb** = responsible for testing whether the database and its tables were created and whether the data is in it.
 
-The fact table has data that belongs to other tables, that is, it is duplicate data, and this table possibly will be out of date, but the benefit is that with a simple consultation the fact table we can obtain the data of the songs played.
+### Running the project
+Open the terminal and execute the commands:
+1. python3 create_tables.py
+2. python3 etl.py
 
 
