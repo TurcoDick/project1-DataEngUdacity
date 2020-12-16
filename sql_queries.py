@@ -1,38 +1,38 @@
 # DROP TABLES
 
-songplay_table_drop = "DROP TABLE songplays"
-user_table_drop = "DROP TABLE users"
-song_table_drop = "DROP TABLE songs"
-artist_table_drop = "DROP TABLE artists"
-time_table_drop = "DROP TABLE time"
+songplay_table_drop = "DROP TABLE IF EXISTS songplays"
+user_table_drop = "DROP TABLE IF EXISTS users"
+song_table_drop = "DROP TABLE IF EXISTS songs"
+artist_table_drop = "DROP TABLE IF EXISTS artists"
+time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays(songplay_id serial primary key, \
+songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays(songplay_id serial primary key not null, \
                                                                  start_time varchar, \
                                                                  user_id varchar, \
                                                                  level varchar, \
                                                                  song_id varchar, \
-                                                                 artist_id varchar, \
-                                                                 session_id varchar, \
+                                                                 artist_id varchar , \
+                                                                 session_id varchar , \
                                                                  location varchar, \
                                                                  user_agent varchar);""")
 
-user_table_create = ("""CREATE TABLE IF NOT EXISTS users(user_id varchar primary key, \
+user_table_create = ("""CREATE TABLE IF NOT EXISTS users(user_id varchar primary key not null, \
                                                          first_name varchar, \
                                                          last_name varchar, \
                                                          gender varchar, \
                                                          level varchar, \
                                                          UNIQUE(user_id));""")
 
-song_table_create = ("""CREATE TABLE IF NOT EXISTS songs(song_id varchar primary key, \
+song_table_create = ("""CREATE TABLE IF NOT EXISTS songs(song_id varchar primary key not null, \
                                                          song varchar, \
                                                          artist_id varchar, \
                                                          year int, \
                                                          duration numeric, \
                                                          UNIQUE(song_id));""")
 
-artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists(artist_id varchar primary key, \
+artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists(artist_id varchar primary key not null, \
                                                              artist_name varchar, \
                                                              artist_location varchar, \
                                                              artist_latitude varchar, \
